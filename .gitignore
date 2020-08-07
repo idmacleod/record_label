@@ -1,0 +1,11 @@
+# Client
+node_modules/
+
+# Server
+*.log
+*.pot
+*.pyc
+__pycache__/
+.env/
+settings.py
+db.sqlite3
