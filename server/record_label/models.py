@@ -86,7 +86,10 @@ class Post(models.Model):
         return f"{self.pub_date} - {self.title}"
 
     def get_json(self):
-        release = self.release.get_json()
+        if self.release:
+            release = self.release.get_json()
+        else:
+            release = None
         return {
             "pk": self.pk,
             "pub_date": self.pub_date,
@@ -97,5 +100,3 @@ class Post(models.Model):
             "links": self.links,
             "release": release
         }
-
-
