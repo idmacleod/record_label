@@ -16,7 +16,7 @@ class Release(models.Model):
     def __str__(self):
         return f"{self.short_name} - {self.artist.name}"
 
-class BlogPost(models.Model):
+class Post(models.Model):
     pub_date = models.DateTimeField()
     category = models.CharField(max_length=100)
     title = models.CharField(max_length=100)

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
-from .models import Artist, Release, BlogPost, Edition
+from .models import *
 
 def artists(request):
     artists = Artist.objects.all()
@@ -13,10 +13,10 @@ def releases(request):
     release_list = serializers.serialize('json', releases)
     return HttpResponse(release_list, content_type="application/json")
 
-def blog_posts(request):
-    blog_posts = BlogPost.objects.all()
-    blog_post_list = serializers.serialize('json', blog_posts)
-    return HttpResponse(blog_post_list, content_type="application/json")
+def posts(request):
+    posts = Post.objects.all()
+    post_list = serializers.serialize('json', posts)
+    return HttpResponse(post_list, content_type="application/json")
 
 def editions(request):
     editions = Edition.objects.all()
