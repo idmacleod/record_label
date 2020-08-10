@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
+import Blog from './components/Blog';
+import ReleaseList from './components/ReleaseList';
+import ArtistList from './components/ArtistList';
 import './App.css';
 
 class App extends React.Component {
@@ -52,6 +55,20 @@ class App extends React.Component {
           <h1>Record Label</h1>
           <Router>
             <NavBar />
+            <Switch>
+              <Route
+                exact path = "/"
+                render={() => <Blog posts={this.state.posts}/>}
+              />
+              <Route
+                exact path = "/releases"
+                render={() => <ReleaseList releases={this.state.releases}/>}
+              />
+              <Route
+                exact path = "/artists"
+                render={() => <ArtistList artists={this.state.artists}/>}
+              />
+            </Switch>
           </Router>
         </header>
       </div>
