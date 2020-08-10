@@ -1,24 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.core import serializers
+from django.http import JsonResponse
 from .models import *
 
 def artists(request):
-    artists = Artist.objects.all()
-    artist_list = serializers.serialize('json', artists)
-    return HttpResponse(artist_list, content_type="application/json")
+    artists = [artist.get_json() for artist in Artist.objects.all()]
+    data = {"artists": artists}
+    return JsonResponse(data)
 
 def releases(request):
-    releases = Release.objects.all()
-    release_list = serializers.serialize('json', releases)
-    return HttpResponse(release_list, content_type="application/json")
-
-def posts(request):
-    posts = Post.objects.all()
-    post_list = serializers.serialize('json', posts)
-    return HttpResponse(post_list, content_type="application/json")
+    releases = [release.get_json() for release in Release.objects.all()]
+    data = {"releases": releases}
+    return JsonResponse(data)
 
 def editions(request):
-    editions = Edition.objects.all()
-    edition_list = serializers.serialize('json', editions)
-    return HttpResponse(edition_list, content_type="application/json")
+    editions = [edition.get_json() for edition in Edition.objects.all()]
+    data = {"editions": editions}
+    return JsonResponse(data)
+
+def posts(request):
+    posts = [post.get_json() for post in Post.objects.all()]
+    data = {"posts": posts}
+    return JsonResponse(data)
