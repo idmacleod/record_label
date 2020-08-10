@@ -1,4 +1,7 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import NavBar from './components/NavBar';
 import './App.css';
 
 class App extends React.Component {
@@ -47,6 +50,9 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1>Record Label</h1>
+          <Router>
+            <NavBar />
+          </Router>
         </header>
       </div>
     );
