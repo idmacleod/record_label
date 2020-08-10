@@ -15,9 +15,27 @@ class App extends React.Component {
   }
 
   fetchData() {
-    fetch('http://localhost:8000/artists/')
+    const fetchArtists = fetch('http://localhost:8000/artists/')
       .then(res => res.json())
-      .then(data => this.setState({artists: data}));
+      .then(data => this.setState({artists: data}))
+      .catch(err => console.error(err));
+
+    const fetchReleases = fetch('http://localhost:8000/releases/')
+      .then(res => res.json())
+      .then(data => this.setState({releases: data}))
+      .catch(err => console.error(err));
+
+    const fetchEditions = fetch('http://localhost:8000/editions/')
+      .then(res => res.json())
+      .then(data => this.setState({editions: data}))
+      .catch(err => console.error(err));
+
+    const fetchPosts = fetch('http://localhost:8000/posts/')
+      .then(res => res.json())
+      .then(data => this.setState({posts: data}))
+      .catch(err => console.error(err));
+
+    return Promise.all([fetchArtists, fetchReleases, fetchEditions, fetchPosts])
   }
 
   componentDidMount() {
