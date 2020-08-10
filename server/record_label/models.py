@@ -2,7 +2,7 @@ from django.db import models
 
 class Artist(models.Model):
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, null=True, blank=True)
+    description = models.CharField(max_length=10000, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -24,11 +24,12 @@ class Artist(models.Model):
 class Release(models.Model):
     short_name = models.CharField(max_length=100)
     long_name = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, null=True, blank=True)
+    description = models.CharField(max_length=10000, null=True, blank=True)
+    cover_art = models.CharField(max_length=200, null=True, blank=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f"{self.short_name} - {self.artist.name}"
+        return f"{self.short_name} - {self.long_name} ({self.artist.name})"
 
     def get_json(self):
         artist = {
@@ -46,17 +47,18 @@ class Release(models.Model):
             "short_name": self.short_name,
             "long_name": self.long_name,
             "description": self.description,
+            "cover_art": self.cover_art,
             "artist": artist,
             "editions": editions
         }
 
 class Edition(models.Model):
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, null=True, blank=True)
+    description = models.CharField(max_length=10000, null=True, blank=True)
     release = models.ForeignKey(Release, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.release.short_name} - {self.name}"
+        return f"{self.release.short_name} - {self.release.long_name} ({self.release.artist.name}) - {self.name}"
 
     def get_json(self):
         release = {
@@ -74,8 +76,8 @@ class Edition(models.Model):
 class Post(models.Model):
     pub_date = models.DateTimeField()
     category = models.CharField(max_length=100)
-    title = models.CharField(max_length=100)
-    text = models.CharField(max_length=1000)
+    title = models.CharField(max_length=200)
+    text = models.CharField(max_length=10000)
     media = models.CharField(max_length=200, null=True, blank=True)
     links = models.CharField(max_length=200, null=True, blank=True)
     release = models.ForeignKey(Release, on_delete=models.CASCADE, null=True, blank=True)
