@@ -1,9 +1,9 @@
 import React from 'react';
-import ReleaseDetail from './ReleaseDetails'
+import ReleaseDetails from './ReleaseDetails'
 
 const ReleaseList = props => {
   const releaseNodes = props.releases.map(release => {
-    return <ReleaseDetail release={release} />;
+    return <ReleaseDetails release={release} />;
   })
 
   return (
