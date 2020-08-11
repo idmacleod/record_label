@@ -2,8 +2,8 @@ import React from 'react';
 import ReleaseDetails from './ReleaseDetails'
 
 const ReleaseList = props => {
-  const releaseNodes = props.releases.map(release => {
-    return <ReleaseDetails release={release} />;
+  const releaseNodes = props.releases.map((release, index) => {
+    return <ReleaseDetails key={index} release={release} />;
   })
 
   return (

@@ -2,8 +2,8 @@ import React from 'react';
 import ArtistDetails from './ArtistDetails'
 
 const ArtistList = props => {
-  const artistNodes = props.artists.map(artist => {
-    return <ArtistDetails artist={artist} />;
+  const artistNodes = props.artists.map((artist, index) => {
+    return <ArtistDetails key={index} artist={artist} />;
   })
 
   return (

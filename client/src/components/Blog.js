@@ -2,8 +2,8 @@ import React from 'react';
 import BlogPost from './BlogPost';
 
 const Blog = props => {
-  const postNodes = props.posts.map(post => {
-    return <BlogPost post={post} />;
+  const postNodes = props.posts.map((post, index) => {
+    return <BlogPost key={index} post={post} />;
   })
 
   return (

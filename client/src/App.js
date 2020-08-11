@@ -52,7 +52,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Tending The Void</h1>
           <Router>
             <NavBar />
             <Switch>
