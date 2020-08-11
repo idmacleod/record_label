@@ -23,22 +23,22 @@ class App extends React.Component {
   fetchData() {
     const fetchArtists = fetch('http://localhost:8000/artists/')
       .then(res => res.json())
-      .then(data => this.setState({artists: data}))
+      .then(data => this.setState({artists: data.artists}))
       .catch(err => console.error(err));
 
     const fetchReleases = fetch('http://localhost:8000/releases/')
       .then(res => res.json())
-      .then(data => this.setState({releases: data}))
+      .then(data => this.setState({releases: data.releases}))
       .catch(err => console.error(err));
 
     const fetchEditions = fetch('http://localhost:8000/editions/')
       .then(res => res.json())
-      .then(data => this.setState({editions: data}))
+      .then(data => this.setState({editions: data.editions}))
       .catch(err => console.error(err));
 
     const fetchPosts = fetch('http://localhost:8000/posts/')
       .then(res => res.json())
-      .then(data => this.setState({posts: data}))
+      .then(data => this.setState({posts: data.posts}))
       .catch(err => console.error(err));
 
     return Promise.all([fetchArtists, fetchReleases, fetchEditions, fetchPosts])
