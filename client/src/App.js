@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import Blog from './components/Blog';
 import ReleaseList from './components/ReleaseList';
 import ArtistList from './components/ArtistList';
-import './App.css';
+import './styles/App.css';
 
 class App extends React.Component {
   constructor(props) {
