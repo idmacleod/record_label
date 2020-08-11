@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import NavBar from './components/NavBar';
+import Intro from './components/Intro'
 import Blog from './components/Blog';
+import NavBar from './components/NavBar';
 import ReleaseList from './components/ReleaseList';
 import ArtistList from './components/ArtistList';
 import './styles/App.css';
@@ -51,14 +52,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="left">
+          <Intro />
+          <Blog posts={this.state.posts}/>
+        </div>
+        <div className="right">
           <Router>
             <NavBar />
             <Switch>
-              <Route
-                exact path = "/"
-                render={() => <Blog posts={this.state.posts}/>}
-              />
               <Route
                 exact path = "/releases"
                 render={() => <ReleaseList releases={this.state.releases}/>}
@@ -69,7 +70,7 @@ class App extends React.Component {
               />
             </Switch>
           </Router>
-        </header>
+        </div>
       </div>
     );
   }

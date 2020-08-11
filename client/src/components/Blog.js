@@ -8,6 +8,7 @@ const Blog = props => {
 
   return (
     <div className="blog">
+      <h2>Latest News</h2>
       <ul>
         {postNodes}
       </ul>
