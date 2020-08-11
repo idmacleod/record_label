@@ -1,5 +1,18 @@
 import React from 'react';
+import ReleaseDetail from './ReleaseDetails'
 
-const ReleaseList = props => <h2>I am a list of releases!</h2>;
+const ReleaseList = props => {
+  const releaseNodes = props.releases.map(release => {
+    return <ReleaseDetail release={release} />;
+  })
+
+  return (
+    <div className="release-list">
+      <ul>
+        {releaseNodes}
+      </ul>
+    </div>
+  );
+}
 
 export default ReleaseList;
