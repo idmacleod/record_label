@@ -10,8 +10,8 @@ class Artist(models.Model):
     def get_json(self):
         releases = [{
             "pk": release.pk,
-            "short_name": release.short_name,
-            "long_name": release.long_name,
+            "cat_no": release.cat_no,
+            "name": release.name,
             "description": release.description
         } for release in self.release_set.all()]
         return {
@@ -22,14 +22,14 @@ class Artist(models.Model):
         }
 
 class Release(models.Model):
-    short_name = models.CharField(max_length=100)
-    long_name = models.CharField(max_length=200)
+    cat_no = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     description = models.CharField(max_length=10000, null=True, blank=True)
     cover_art = models.CharField(max_length=200, null=True, blank=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f"{self.short_name} - {self.long_name} ({self.artist.name})"
+        return f"{self.cat_no} - {self.name} ({self.artist.name})"
 
     def get_json(self):
         artist = {
@@ -44,8 +44,8 @@ class Release(models.Model):
         } for edition in self.edition_set.all()]
         return {
             "pk": self.pk,
-            "short_name": self.short_name,
-            "long_name": self.long_name,
+            "cat_no": self.cat_no,
+            "name": self.name,
             "description": self.description,
             "cover_art": self.cover_art,
             "artist": artist,
@@ -58,19 +58,26 @@ class Edition(models.Model):
     release = models.ForeignKey(Release, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.release.short_name} - {self.release.long_name} ({self.release.artist.name}) - {self.name}"
+        return f"{self.release.cat_no} - {self.release.name} ({self.release.artist.name}) - {self.name}"
 
     def get_json(self):
         release = {
             "pk": self.release.pk,
-            "short_name": self.release.short_name,
-            "long_name": self.release.long_name,
+            "cat_no": self.release.cat_no,
+            "name": self.release.name,
             "description": self.release.description,
+            "cover_art": self.release.cover_art,
             "artist": {
                 "pk": self.release.artist.pk,
                 "name": self.release.artist.name,
                 "description": self.release.artist.description,
             }
+        }
+        return {
+            "pk": self.pk,
+            "name": self.name,
+            "description": self.description,
+            "release": release
         }
 
 class Post(models.Model):
