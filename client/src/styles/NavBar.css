@@ -4,7 +4,7 @@
     margin: 20px;
 }
 
-nav {
+.nav-bar nav {
     display: flex;
     justify-items: center;
 }
@@ -17,11 +17,11 @@ nav {
     padding: 0;
 }
 
-li {
+.nav-bar li {
     margin: 0 25px;
 }
 
-a {
+.nav-bar a {
     text-decoration: none;
     color: white;
 }

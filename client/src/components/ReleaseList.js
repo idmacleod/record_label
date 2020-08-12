@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ReleaseDetails from './ReleaseDetails'
 
 const ReleaseList = props => {
