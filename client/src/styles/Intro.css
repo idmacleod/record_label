@@ -1,7 +1,7 @@
 .intro {
     display: grid;
-    grid-template-areas: "title title img1 img2"
-                         "img3 img3 description description";
+    grid-template-areas: "title title img1 img2 img3"
+                         "img4 img4 description description description";
 }
 
 #title {
@@ -24,10 +24,14 @@
     grid-area: img3;
 }
 
+#img4 {
+    grid-area: img4;
+}
+
 #description {
     grid-area: description;
     margin: 0;
-    padding: 10px;
+    padding: 25px;
 }
 
 .intro img {
