@@ -1,14 +1,35 @@
 .intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "title title img1 img2"
+                         "img3 img3 description description";
 }
 
-header img {
+#title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#img1 {
+    grid-area: img1;
+}
+
+#img2 {
+    grid-area: img2;
+}
+
+#img3 {
+    grid-area: img3;
+}
+
+#description {
+    grid-area: description;
+    margin: 0;
+    padding: 10px;
+}
+
+.intro img {
     width: 100%;
 }
