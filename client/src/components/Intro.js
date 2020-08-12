@@ -16,7 +16,13 @@ const Intro = () => {
       <img src={image2} id="img2" alt="" />
       <img src={image3} id="img3" alt="" />
       <img src={image4} id="img4" alt="" />
-      <p id="description">Edinburgh based label specialising in oddball house, techno and electronics. Collectable editions made by hand since 2004.</p>
+      <div id="description">
+        <p>Edinburgh based label specialising in oddball house, techno and electronics. Collectable editions made by hand since 2004.</p>
+        {/* <div id="contact">
+          <p>Contact us at <a href="mailto:firecrackerrecordings@gmail.com">firecrackerrecordings@gmail.com</a></p>
+          <p>More artwork by Lindsay Todd at <a href="lindsaytodd.studio">lindsaytodd.studio</a></p>
+        </div> */}
+      </div>
     </div>
   );
 }

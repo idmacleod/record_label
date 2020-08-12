@@ -28,12 +28,25 @@
     grid-area: img4;
 }
 
+.intro img {
+    width: 100%;
+}
+
 #description {
     grid-area: description;
     margin: 0;
-    padding: 25px;
+    padding: 10px;
 }
 
-.intro img {
-    width: 100%;
+#description p {
+    margin: 10px
+}
+
+#contact {
+    font-family: 'Courier New', monospace;
+    font-size: small;
+}
+
+#contact a {
+    color: black;
 }
