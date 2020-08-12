@@ -5,9 +5,9 @@ import '../styles/NavBar.css'
 const NavBar = () => (
   <nav>
     <ul>
-      <li><Link to="/releases">Releases</Link></li>
+      <li><Link to="/releases">releases</Link></li>
       <li>~ / / / ~</li>
-      <li><Link to="/artists">Artists</Link></li>
+      <li><Link to="/artists">artists</Link></li>
     </ul>
   </nav>
 );

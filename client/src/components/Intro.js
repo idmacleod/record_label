@@ -10,7 +10,7 @@ const Intro = () => {
   return (
     <div className="intro">
       <header id="title">
-        <h1>tending the void</h1>
+        <h1>tending the <span className="shadow">void</span></h1>
       </header>
       <img src={image1} id="img1" alt="" />
       <img src={image2} id="img2" alt="" />
