@@ -1,16 +1,26 @@
 @font-face {
-    font-family: 'Trial Regular';
-    src: url("./fonts/Trial-Regular.otf");
+    font-family: 'Trial Thin';
+    src: url("./fonts/Trial-Thin.otf");
+}
+
+body {
+    margin: 0;
 }
 
 .App {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr
 }
 
+.left {
+    height: 100vh;
+    padding: 10px;
+}
+
 .right {
     height: 100vh;
+    padding: 10px;
     background-color: black;
     color: white;
 }
