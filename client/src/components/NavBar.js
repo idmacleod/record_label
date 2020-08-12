@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import '../styles/NavBar.css'
 
 const NavBar = () => (
-  <div className="nav-bar">
-    <nav>
-      <ul className="links">
-        <li><Link to="/releases">Releases</Link></li>
-        <li><Link to="/artists">Artists</Link></li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li><Link to="/releases">Releases</Link></li>
+      <li>~ / / / ~</li>
+      <li><Link to="/artists">Artists</Link></li>
+    </ul>
+  </nav>
 );
 
 export default NavBar;

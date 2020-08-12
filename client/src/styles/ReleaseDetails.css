@@ -1,0 +1,25 @@
+.release-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.release-details .grid-box {
+    margin: 10px;
+}
+
+.release-details img {
+    width: 100%;
+}
+
+.release-details li {
+    margin: 0 0 10px 0;
+}
+
+.release-details .artist {
+    font-style: italic;
+}
+
+.release-details .description {
+    font-family: 'Courier New', monospace;
+    font-size: small;
+}

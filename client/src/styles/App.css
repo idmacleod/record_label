@@ -14,12 +14,10 @@ body {
 }
 
 .left {
-    height: 100vh;
     padding: 10px;
 }
 
 .right {
-    height: 100vh;
     padding: 10px;
     background-color: black;
     color: white;
