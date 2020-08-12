@@ -4,7 +4,7 @@ import '../styles/ReleaseDetails.css';
 
 const ReleaseDetails = ({release}) => {
   return (
-    <li className="release-details">
+    <div className="release-details">
       <div className="grid-box">
         <img src={release.cover_art} alt="cover" />
       </div>
@@ -15,7 +15,7 @@ const ReleaseDetails = ({release}) => {
           <li className="description">{release.description}</li>
         </ul>
       </div>
-    </li>
+    </div>
   );
 }
 
