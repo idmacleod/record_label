@@ -17,11 +17,11 @@ const Intro = () => {
       <img src={image3} id="img3" alt="" />
       <img src={image4} id="img4" alt="" />
       <div id="description">
-        <p>Edinburgh based label specialising in oddball house, techno and electronics. Collectable editions made by hand since 2004.</p>
-        {/* <div id="contact">
-          <p>Contact us at <a href="mailto:firecrackerrecordings@gmail.com">firecrackerrecordings@gmail.com</a></p>
-          <p>More artwork by Lindsay Todd at <a href="lindsaytodd.studio">lindsaytodd.studio</a></p>
-        </div> */}
+        <p>A chance to dissolve the old mortices, deconstruct and rebuild forms.</p>
+        <p>This musical universe is one of warping cadences and celestial melodies.</p>
+        <p>Cosmic tones for mental therapy,</p>
+        <p>Here is a new assemblage, collocation and collaboration,</p>
+        <p>Exploring sounds and scenes of tomorrow’s vortices.</p>
       </div>
     </div>
   );
