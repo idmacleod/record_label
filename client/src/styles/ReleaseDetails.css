@@ -43,4 +43,5 @@
 .release-details .description {
     font-family: 'Courier New', monospace;
     font-size: small;
+    white-space: pre-line;
 }

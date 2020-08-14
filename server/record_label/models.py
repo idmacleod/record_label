@@ -2,7 +2,7 @@ from django.db import models
 
 class Artist(models.Model):
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=10000, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -25,7 +25,7 @@ class Artist(models.Model):
 class Release(models.Model):
     cat_no = models.CharField(max_length=100)
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=10000, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     cover_art = models.CharField(max_length=200, null=True, blank=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     
@@ -55,7 +55,7 @@ class Release(models.Model):
 
 class Edition(models.Model):
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=10000, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     release = models.ForeignKey(Release, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -85,7 +85,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField()
     category = models.CharField(max_length=100)
     title = models.CharField(max_length=200)
-    text = models.CharField(max_length=10000)
+    text = models.TextField()
     media = models.CharField(max_length=200, null=True, blank=True)
     links = models.CharField(max_length=200, null=True, blank=True)
     release = models.ForeignKey(Release, on_delete=models.CASCADE, null=True, blank=True)

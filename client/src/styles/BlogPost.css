@@ -21,4 +21,5 @@
 .blog-post .text {
     font-family: 'Courier New', monospace;
     font-size: small;
+    white-space: pre-line;
 }
