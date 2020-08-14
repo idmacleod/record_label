@@ -9,8 +9,8 @@ const ReleaseDetails = ({release}) => {
         <img src={release.cover_art} alt="cover" />
       </div>
       <div className="grid-box">
+        <h3 className="name">{release.name}</h3>
         <ul>
-          <li className="name">{release.name}</li>
           <li className="artist">{release.artist.name}</li>
           <li className="description">{release.description}</li>
         </ul>

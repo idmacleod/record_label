@@ -17,5 +17,6 @@ nav a {
 
 nav a:hover, nav a:active {
     border: 1px dashed white;
+    border-radius: 10px;
     color: white;
 }
