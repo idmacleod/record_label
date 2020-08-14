@@ -28,3 +28,7 @@ ul {
 .shadow {
     text-shadow: 10px 10px lightgray;
 }
+
+#main-image {
+    width: 100%;
+}

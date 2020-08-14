@@ -6,6 +6,7 @@ import Blog from './components/Blog';
 import NavBar from './components/NavBar';
 import ReleaseList from './components/ReleaseList';
 import ArtistList from './components/ArtistList';
+import image from './images/Les PRINT3.jpg'
 import './styles/App.css';
 
 class App extends React.Component {
@@ -60,6 +61,10 @@ class App extends React.Component {
           <Router>
             <NavBar />
             <Switch>
+              <Route
+                exact path = "/"
+                render={() => <img id="main-image" src={image} alt="" />}
+              />
               <Route
                 exact path = "/releases"
                 render={() => <ReleaseList releases={this.state.releases}/>}
