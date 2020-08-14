@@ -12,7 +12,8 @@ class Artist(models.Model):
             "pk": release.pk,
             "cat_no": release.cat_no,
             "name": release.name,
-            "description": release.description
+            "description": release.description,
+            "cover_art": release.cover_art
         } for release in self.release_set.all()]
         return {
             "pk": self.pk,

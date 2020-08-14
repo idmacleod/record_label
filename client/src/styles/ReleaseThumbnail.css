@@ -1,0 +1,20 @@
+.release-thumbnail {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.release-thumbnail:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.release-thumbnail img {
+    width: 50px;
+}
+
+.release-thumbnail p {
+    margin: 10px;
+}
+

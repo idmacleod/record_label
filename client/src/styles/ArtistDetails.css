@@ -1,0 +1,26 @@
+.artist-details {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px dashed white;
+    border-radius: 10px;
+}
+
+.artist-details .name {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-weight: lighter;
+    background-color: white;
+    color: black;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.artist-details .description {
+    font-family: 'Courier New', monospace;
+    font-size: small;
+}
+
+.artist-details .releases {
+    display: flex;
+    flex-wrap: wrap;
+}
