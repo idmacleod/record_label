@@ -86,7 +86,7 @@ class Post(models.Model):
     category = models.CharField(max_length=100)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    media = models.CharField(max_length=200, null=True, blank=True)
+    media = models.ImageField(upload_to='posts', null=True, blank=True)
     links = models.CharField(max_length=200, null=True, blank=True)
     release = models.ForeignKey(Release, on_delete=models.CASCADE, null=True, blank=True)
 
@@ -98,13 +98,17 @@ class Post(models.Model):
             release = self.release.get_json()
         else:
             release = None
+        if self.media:
+            media = self.media.url
+        else:
+            media = None
         return {
             "pk": self.pk,
             "pub_date": self.pub_date,
             "category": self.category,
             "title": self.title,
             "text": self.text,
-            "media": self.media,
+            "media": media,
             "links": self.links,
             "release": release
         }
