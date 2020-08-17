@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Trial Thin';
-    src: url("./fonts/Trial-Thin.otf");
+    font-family: 'Trial Regular';
+    src: url("./fonts/Trial-Regular.otf");
 }
 
 body {
@@ -8,7 +8,7 @@ body {
 }
 
 .App {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr
 }
