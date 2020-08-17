@@ -23,3 +23,7 @@
     font-size: small;
     white-space: pre-line;
 }
+
+.blog-post img {
+    width: 100%;
+}
