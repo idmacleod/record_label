@@ -10,7 +10,6 @@ const Blog = props => {
 
   return (
     <div className="blog">
-      <h2>blog from the void...</h2>
       <ul>
         {postNodes}
       </ul>

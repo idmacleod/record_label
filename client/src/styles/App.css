@@ -1,34 +1,18 @@
-@font-face {
-    font-family: 'Trial Regular';
-    src: url("./fonts/Trial-Regular.otf");
-}
-
 body {
+    display: flex;
+    justify-content: center;
     margin: 0;
+    background-color: black;
 }
 
 .App {
     font-family: 'Roboto', sans-serif;
-    display: grid;
-    grid-template-columns: 1fr 1fr
-}
-
-.right {
-    padding: 10px;
-    background-color: black;
     color: white;
+    max-width: 800px;
 }
 
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.shadow {
-    text-shadow: 10px 10px lightgray;
-}
-
-#main-image {
-    width: 100%;
 }
