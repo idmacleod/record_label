@@ -14,9 +14,9 @@ const Intro = () => {
 
 export default Intro;
 
-{/* <p>A chance to dissolve old mortices,</p>
+/* <p>A chance to dissolve old mortices,</p>
 <p>Deconstruct and rebuild forms.</p>
 <p>This universe is one of warping cadences and celestial melodies.</p>
 <p>Cosmic tones for mental therapy,</p>
 <p>Here is a new assemblage, collocation and collaboration,</p>
-<p>Exploring sounds and scenes of tomorrow’s unlocked vortices.</p> */}
+<p>Exploring sounds and scenes of tomorrow’s unlocked vortices.</p> */
