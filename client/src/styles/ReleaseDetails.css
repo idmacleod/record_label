@@ -19,19 +19,12 @@
 }
 
 .release-details .name {
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-weight: lighter;
-    background-color: white;
-    color: black;
     margin: 0 0 10px 0;
-    padding: 0 5px;
 }
 
 .release-details .artist {
     display: inline-block;
     margin: 0 0 10px 0;
-    padding: 0 5px;
 }
 
 .release-details .artist:hover {
