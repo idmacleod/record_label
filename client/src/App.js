@@ -1,7 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Intro from './components/Intro'
+import Intro from './components/Intro';
+import NavBar from './components/NavBar';
 import ReleaseList from './components/ReleaseList';
+import Blog from './components/Blog';
 import './styles/App.css';
 
 class App extends React.Component {
@@ -38,7 +41,7 @@ class App extends React.Component {
       .then(data => this.setState({posts: data.posts}))
       .catch(err => console.error(err));
 
-    return Promise.all([fetchArtists, fetchReleases, fetchEditions, fetchPosts])
+    return Promise.all([fetchArtists, fetchReleases, fetchEditions, fetchPosts]);
   }
 
   componentDidMount() {
@@ -49,8 +52,19 @@ class App extends React.Component {
     return (
       <div className="App">
         <Intro />
-        {/* <Blog posts={this.state.posts}/> */}
-        <ReleaseList releases={this.state.releases}/>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route
+              exact path = "/"
+              render={() => <ReleaseList releases={this.state.releases}/>}
+            />
+            <Route
+              exact path = "/blog"
+              render={() => <Blog posts={this.state.posts}/>}
+            />
+          </Switch>
+        </Router>
       </div>
     );
   }
