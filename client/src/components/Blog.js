@@ -1,7 +1,6 @@
 import React from 'react';
 
 import BlogPost from './BlogPost';
-import '../styles/Blog.css'
 
 const Blog = props => {
   const postNodes = props.posts.map((post, index) => {

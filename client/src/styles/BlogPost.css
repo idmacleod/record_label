@@ -1,21 +1,17 @@
 .blog-post {
-    padding: 10px;
     margin: 10px 0;
-    border: 1px dashed black;
+    padding: 10px;
+    border: 1px solid white;
     border-radius: 10px;
 }
 
-.blog-post .date {
-    font-family: 'Courier New', monospace;
-    font-weight: lighter;
-    background-color: black;
-    color: white;
-    margin: 0 5px;
-    padding: 0 5px;
+.blog-post .header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.blog-post .title {
-    margin: 0;
+.blog-post h3, .blog-post h4 {
+    margin: 0 0 10px 0;
 }
 
 .blog-post .text {
