@@ -27,6 +27,7 @@ class Release(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     cover_art = models.CharField(max_length=200, null=True, blank=True)
+    audio = models.CharField(max_length=200, null=True, blank=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -49,6 +50,7 @@ class Release(models.Model):
             "name": self.name,
             "description": self.description,
             "cover_art": self.cover_art,
+            "audio": self.audio,
             "artist": artist,
             "editions": editions
         }
