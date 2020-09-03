@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Intro from './components/Intro';
+import MixList from './components/MixList';
 import NavBar from './components/NavBar';
 import ReleaseList from './components/ReleaseList';
 import Blog from './components/Blog';
@@ -54,16 +55,19 @@ class App extends React.Component {
         <Intro />
         <Router>
           <NavBar />
-          <Switch>
-            <Route
-              exact path = "/"
-              render={() => <ReleaseList releases={this.state.releases}/>}
-            />
-            <Route
-              exact path = "/blog"
-              render={() => <Blog posts={this.state.posts}/>}
-            />
-          </Switch>
+          <div className="main">
+            <Switch>
+              <Route
+                exact path = "/"
+                render={() => <ReleaseList releases={this.state.releases}/>}
+              />
+              <Route
+                exact path = "/blog"
+                render={() => <Blog posts={this.state.posts}/>}
+              />
+            </Switch>
+            {/* <MixList /> */}
+          </div>
         </Router>
       </div>
     );
