@@ -1,7 +1,17 @@
 .release-thumbnail {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin: 5px;
+}
+
+.release-thumbnail .left {
+    display: flex;
+    align-items: center;
+}
+
+.release-thumbnail .right p {
+    margin: 0;
+    padding: 5px;
 }
 
 .release-thumbnail:hover {
