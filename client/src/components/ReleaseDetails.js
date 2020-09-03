@@ -14,7 +14,7 @@ const ReleaseDetails = ({release}) => {
           <li className="artist">{release.artist.name}</li>
           <li className="description">{release.description}</li>
         </ul>
-        <iframe src="https://bandcamp.com/EmbeddedPlayer/album=1285742574/size=small/bgcol=333333/linkcol=ffffff/artwork=none/track=671030091/transparent=true/" seamless></iframe>
+        <iframe src={release.audio} seamless></iframe>
       </div>
     </div>
   );
