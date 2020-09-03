@@ -9,9 +9,9 @@ const NavBar = () => (
       <li>~ / ~ / ~ / ~</li>
       <li><Link to="/blog">blog</Link></li>
       <li>~ \ ~ \ ~ \ ~</li>
-      <li><Link to="/mixes">mixes</Link></li>
+      <li><Link to="/">mixes</Link></li>
     </ul>
   </nav>
 );
 
-export default NavBar;
+export default NavBar; 
