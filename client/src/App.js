@@ -66,7 +66,7 @@ class App extends React.Component {
                 render={() => <Blog posts={this.state.posts}/>}
               />
             </Switch>
-            {/* <MixList /> */}
+            <MixList />
           </div>
         </Router>
       </div>
