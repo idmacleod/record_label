@@ -15,10 +15,12 @@ class App extends React.Component {
       artists: [],
       releases: [],
       editions: [],
-      posts: []
+      posts: [],
+      showMixes: false
     }
 
     this.fetchData = this.fetchData.bind(this);
+    this.toggleMixes = this.toggleMixes.bind(this);
   }
 
   fetchData() {
@@ -49,12 +51,16 @@ class App extends React.Component {
     this.fetchData();
   }
 
+  toggleMixes() {
+    this.setState({ showMixes: !this.state.showMixes });
+  }
+
   render() {
     return (
       <div className="App">
         <Intro />
         <Router>
-          <NavBar />
+          <NavBar showMixes={this.state.showMixes} toggleMixes={this.toggleMixes}/>
           <div className="main">
             <Switch>
               <Route
@@ -66,7 +72,7 @@ class App extends React.Component {
                 render={() => <Blog posts={this.state.posts}/>}
               />
             </Switch>
-            <MixList />
+            <MixList showMixes={this.state.showMixes}/>
           </div>
         </Router>
       </div>
