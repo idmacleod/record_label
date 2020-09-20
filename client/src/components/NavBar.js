@@ -12,7 +12,7 @@ const NavBar = ({showMixes, toggleMixes}) => (
       <motion.li whileHover={{ scale: 1.05 }}><Link to="/blog">blog</Link></motion.li>
       <li>~ \ ~ \ ~ \ ~</li>
       <motion.li whileHover={{ scale: 1.05 }}>
-        <a onClick={toggleMixes}>{showMixes ? ">>" : "<<"} mixes</a>
+        <button onClick={toggleMixes}>{showMixes ? ">>" : "<<"} mixes</button>
       </motion.li>
     </ul>
   </nav>

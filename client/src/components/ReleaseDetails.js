@@ -14,7 +14,7 @@ const ReleaseDetails = ({release}) => {
           <li className="artist">{release.artist.name}</li>
           <li className="description">{release.description}</li>
         </ul>
-        <iframe src={release.audio} seamless></iframe>
+        <iframe title={release.audio} src={release.audio} seamless></iframe>
       </div>
     </div>
   );

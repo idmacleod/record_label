@@ -5,7 +5,7 @@ import '../styles/MixTrack.css';
 const MixTrack = ({track}) => {
   return (
     <div className="mix-track">
-      <iframe src={track} seamless></iframe>
+      <iframe title={track.audio} src={track.audio} seamless></iframe>
     </div>
   );
 }

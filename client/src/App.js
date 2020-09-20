@@ -16,6 +16,7 @@ class App extends React.Component {
       releases: [],
       editions: [],
       posts: [],
+      tracks: [],
       showMixes: false
     }
 
@@ -43,8 +44,13 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => this.setState({posts: data.posts}))
       .catch(err => console.error(err));
+    
+    const fetchTracks = fetch('http://localhost:8000/tracks/')
+      .then(res => res.json())
+      .then(data => this.setState({tracks: data.tracks}))
+      .catch(err => console.error(err));
 
-    return Promise.all([fetchArtists, fetchReleases, fetchEditions, fetchPosts]);
+    return Promise.all([fetchArtists, fetchReleases, fetchEditions, fetchPosts, fetchTracks]);
   }
 
   componentDidMount() {
@@ -72,7 +78,7 @@ class App extends React.Component {
                 render={() => <Blog posts={this.state.posts}/>}
               />
             </Switch>
-            <MixList showMixes={this.state.showMixes}/>
+            <MixList showMixes={this.state.showMixes} tracks={this.state.tracks}/>
           </div>
         </Router>
       </div>

@@ -9,7 +9,11 @@ const variants = {
   closed: { opacity: 0, width: 0, padding: 0 }
 }
 
-const MixList = ({showMixes}) => {
+const MixList = ({showMixes, tracks}) => {
+  const trackNodes = tracks.map((track, index) => {
+    return <MixTrack key={index} track={track} />;
+  })
+
   return (
     <motion.ul
       className="mix-list"
@@ -17,9 +21,7 @@ const MixList = ({showMixes}) => {
       animate={ showMixes ? "open" : "closed" }
       variants={variants}
     >
-      <MixTrack track="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/760812571&color=%231a262c&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false" />
-      <MixTrack track="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/760812571&color=%231a262c&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false" />
-      <MixTrack track="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/760812571&color=%231a262c&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false" />
+      {trackNodes}
     </motion.ul>
   );
 }
