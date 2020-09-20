@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import MixTrack from './MixTrack';
 import '../styles/MixList.css';

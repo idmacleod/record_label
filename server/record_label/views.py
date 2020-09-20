@@ -20,3 +20,8 @@ def posts(request):
     posts = [post.get_json() for post in Post.objects.all()]
     data = {"posts": posts}
     return JsonResponse(data)
+
+def tracks(request):
+    tracks = [track.get_json() for track in Track.objects.all()]
+    data = {"tracks": tracks}
+    return JsonResponse(data)

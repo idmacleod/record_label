@@ -114,3 +114,15 @@ class Post(models.Model):
             "links": self.links,
             "release": release
         }
+
+class Track(models.Model):
+    audio = models.TextField()
+
+    def __str__(self):
+        return f"Track {self.pk}"
+
+    def get_json(self):
+        return {
+            "pk": self.pk,
+            "audio": self.audio
+        }
