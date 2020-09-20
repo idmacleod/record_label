@@ -10,7 +10,7 @@ const ReleaseThumbnail = ({index, release, onSelect}) => {
         <p>{release.name}</p>
       </div>
       <div className="right">
-        <p>~ ~ ~ {release.artist.name}</p>
+        <p>{release.artist.name}</p>
       </div>
     </li>
   );
